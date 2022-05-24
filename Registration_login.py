@@ -25,3 +25,4 @@ driver.find_element_by_css_selector("input[value='Login']").click() #5
 element=driver.find_element_by_tag_name("html") #6
 checking=element.text #6
 assert "Logout" in checking #6
+1
