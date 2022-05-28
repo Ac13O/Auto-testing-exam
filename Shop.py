@@ -65,14 +65,36 @@ driver.implicitly_wait(5)
 
 
 #отображение, скидка товара
-driver.get("http://practice.automationtesting.in/")
-driver.find_element_by_link_text("My Account").click()
-driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
-driver.find_element_by_id("password").send_keys("Ac!78978977")
-driver.find_element_by_css_selector("input[value='Login']").click()
-driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
-driver.find_element_by_css_selector("img[title='Android Quick Start Guide']").click()
-element=driver.find_elements_by_css_selector("p[class='price']")
-element_text=element.text
-assert element_text=="600"
-# assert element_text=="450"
+# driver.get("http://practice.automationtesting.in/")
+# driver.find_element_by_link_text("My Account").click()
+# driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
+# driver.find_element_by_id("password").send_keys("Ac!78978977")
+# driver.find_element_by_css_selector("input[value='Login']").click()
+# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+# driver.find_element_by_css_selector("img[title='Android Quick Start Guide']").click()
+# element=driver.find_element_by_css_selector("p[class='price']>del").text
+# assert element=="₹600.00"
+# element=driver.find_element_by_css_selector("p[class='price']>ins").text
+# assert element=="₹450.00"
+# driver.find_element_by_css_selector("img[alt='Android Quick Start Guide']").click()
+# close=WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.CSS_SELECTOR,'a[class="pp_close"]')))
+# close.click()
+
+
+#проверка цены в корзине
+# driver.get("http://practice.automationtesting.in/")
+# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+# driver.find_element_by_css_selector("a[data-product_id='182']").click()
+# time.sleep(3)
+# element=driver.find_element_by_css_selector("span[class='cartcontents']").text
+# print(element)
+# assert element=="1 Item"
+# element=driver.find_element_by_css_selector("span[class='amount']").text
+# print(element)
+# assert element=="₹180.00"
+# driver.find_element_by_css_selector("a[title='View your shopping cart']").click()
+#
+# WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "tr[class='cart-subtotal']"), "180.00"))
+# WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.TAG_NAME, "strong"), ""))
+
+#работа в корзине
