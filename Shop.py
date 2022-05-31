@@ -98,3 +98,32 @@ driver.implicitly_wait(5)
 # WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.TAG_NAME, "strong"), ""))
 
 #работа в корзине
+driver.get("http://practice.automationtesting.in/")
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+driver.execute_script("window.scrollBy(0,300);")
+driver.find_element_by_css_selector("a[data-product_id='182']").click()
+time.sleep(3)
+button=driver.find_element_by_css_selector("a[data-product_id='180']")
+driver.execute_script("return arguments[0].scrollIntoView(true);",button)
+button.click()
+time.sleep(4)
+driver.find_element_by_css_selector("a[title='View your shopping cart']").click()
+time.sleep(2)
+driver.find_element_by_css_selector("a[class='remove']").click()
+time.sleep(2)
+driver.find_element_by_link_text("Undo?"). click()
+driver.find_element_by_css_selector("input[name='cart[4c5bde74a8f110656874902f07378009][qty]']").clear()
+driver.find_element_by_css_selector("input[name='cart[4c5bde74a8f110656874902f07378009][qty]']").send_keys("3")
+time.sleep(1)
+driver.find_element_by_css_selector("input[name='update_cart']").click()
+qty=driver.find_element_by_css_selector("input[name='cart[4c5bde74a8f110656874902f07378009][qty]']")
+value_qty=qty.get_attribute("value")
+print(value_qty)
+assert value_qty=="3"
+time.sleep(1)
+driver.find_element_by_css_selector("input[name='apply_coupon']").click()
+time.sleep(2)
+text=driver.find_element_by_tag_name("body").text
+# print(text)
+assert "Please enter a coupon code." in text
+
