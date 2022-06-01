@@ -9,93 +9,92 @@ driver.maximize_window()
 driver.implicitly_wait(5)
 
 # # отображение страницы товара
-# driver.get("http://practice.automationtesting.in/")
-# driver.find_element_by_link_text("My Account").click()
-# driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
-# driver.find_element_by_id("password").send_keys("Ac!78978977")
-# driver.find_element_by_css_selector("input[value='Login']").click()
-# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
-# driver.find_element_by_css_selector("img[alt='Mastering HTML5 Forms']").click()
-# title=driver.find_element_by_css_selector("h1[class='product_title entry-title']")
-# if title.text=="HTML5 Forms":
-#     print("верная книга")
-# else:
-#   print("Другая книга")
+driver.get("http://practice.automationtesting.in/")
+driver.find_element_by_link_text("My Account").click()
+driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
+driver.find_element_by_id("password").send_keys("Ac!78978977")
+driver.find_element_by_css_selector("input[value='Login']").click()
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+driver.find_element_by_css_selector("img[alt='Mastering HTML5 Forms']").click()
+title=driver.find_element_by_css_selector("h1[class='product_title entry-title']")
+if title.text=="HTML5 Forms":
+    print("верная книга")
+else:
+  print("Другая книга")
 
 # # количество товаров в категории
-# driver.get("http://practice.automationtesting.in/")
-# driver.find_element_by_link_text("My Account").click()
-# driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
-# driver.find_element_by_id("password").send_keys("Ac!78978977")
-# driver.find_element_by_css_selector("input[value='Login']").click()
-# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
-# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/product-category/html/']").click()
-# time.sleep(3)
-# count=driver.find_elements_by_class_name("woocommerce-LoopProduct-link")
-# if len(count)==3:
-#     print("3 товара в категории")
-# else:
-#     print("в категории не 3 товара")
+driver.get("http://practice.automationtesting.in/")
+driver.find_element_by_link_text("My Account").click()
+driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
+driver.find_element_by_id("password").send_keys("Ac!78978977")
+driver.find_element_by_css_selector("input[value='Login']").click()
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/product-category/html/']").click()
+time.sleep(3)
+count=driver.find_elements_by_class_name("woocommerce-LoopProduct-link")
+if len(count)==3:
+    print("3 товара в категории")
+else:
+    print("в категории не 3 товара")
 
 
 # #сортировка товаров
-# driver.get("http://practice.automationtesting.in/")
-# driver.find_element_by_link_text("My Account").click()
-# driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
-# driver.find_element_by_id("password").send_keys("Ac!78978977")
-# driver.find_element_by_css_selector("input[value='Login']").click()
-# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
-#
-# selector=driver.find_element_by_css_selector("option[value='menu_order']")
-# selector_status=selector.get_attribute("selected")
-# if selector_status == "true":
-#     print("в селекторе выбран вариант сортировки по умолчанию")
-# else:
-#     print("в селекторе выбран вариант сортировки НЕ по умолчанию")
-#
-# select=Select(driver.find_element_by_css_selector("select[class='orderby']"))
-# select.select_by_visible_text("Sort by price: high to low")
-#
-# selector=driver.find_element_by_css_selector("option[value='price-desc']")
-# selector_status=selector.get_attribute("selected")
-# if selector_status == "true":
-#     print("в селекторе выбран вариант сортировки от большей цены к меньшей")
-# else:
-#     print("в селекторе выбран вариант сортировки НЕ от большей цены к меньшей")
+driver.get("http://practice.automationtesting.in/")
+driver.find_element_by_link_text("My Account").click()
+driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
+driver.find_element_by_id("password").send_keys("Ac!78978977")
+driver.find_element_by_css_selector("input[value='Login']").click()
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+
+selector=driver.find_element_by_css_selector("option[value='menu_order']")
+selector_status=selector.get_attribute("selected")
+if selector_status == "true":
+    print("в селекторе выбран вариант сортировки по умолчанию")
+else:
+    print("в селекторе выбран вариант сортировки НЕ по умолчанию")
+
+select=Select(driver.find_element_by_css_selector("select[class='orderby']"))
+select.select_by_visible_text("Sort by price: high to low")
+
+selector=driver.find_element_by_css_selector("option[value='price-desc']")
+selector_status=selector.get_attribute("selected")
+if selector_status == "true":
+    print("в селекторе выбран вариант сортировки от большей цены к меньшей")
+else:
+    print("в селекторе выбран вариант сортировки НЕ от большей цены к меньшей")
 
 
 #отображение, скидка товара
-# driver.get("http://practice.automationtesting.in/")
-# driver.find_element_by_link_text("My Account").click()
-# driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
-# driver.find_element_by_id("password").send_keys("Ac!78978977")
-# driver.find_element_by_css_selector("input[value='Login']").click()
-# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
-# driver.find_element_by_css_selector("img[title='Android Quick Start Guide']").click()
-# element=driver.find_element_by_css_selector("p[class='price']>del").text
-# assert element=="₹600.00"
-# element=driver.find_element_by_css_selector("p[class='price']>ins").text
-# assert element=="₹450.00"
-# driver.find_element_by_css_selector("img[alt='Android Quick Start Guide']").click()
-# close=WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.CSS_SELECTOR,'a[class="pp_close"]')))
-# close.click()
+driver.get("http://practice.automationtesting.in/")
+driver.find_element_by_link_text("My Account").click()
+driver.find_element_by_id("username").send_keys("zil4104@mail.ru")
+driver.find_element_by_id("password").send_keys("Ac!78978977")
+driver.find_element_by_css_selector("input[value='Login']").click()
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+driver.find_element_by_css_selector("img[title='Android Quick Start Guide']").click()
+element=driver.find_element_by_css_selector("p[class='price']>del").text
+assert element=="₹600.00"
+element=driver.find_element_by_css_selector("p[class='price']>ins").text
+assert element=="₹450.00"
+driver.find_element_by_css_selector("img[alt='Android Quick Start Guide']").click()
+close=WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.CSS_SELECTOR,'a[class="pp_close"]')))
+close.click()
 
 
 #проверка цены в корзине
-# driver.get("http://practice.automationtesting.in/")
-# driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
-# driver.find_element_by_css_selector("a[data-product_id='182']").click()
-# time.sleep(3)
-# element=driver.find_element_by_css_selector("span[class='cartcontents']").text
-# print(element)
-# assert element=="1 Item"
-# element=driver.find_element_by_css_selector("span[class='amount']").text
-# print(element)
-# assert element=="₹180.00"
-# driver.find_element_by_css_selector("a[title='View your shopping cart']").click()
-#
-# WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "tr[class='cart-subtotal']"), "180.00"))
-# WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.TAG_NAME, "strong"), ""))
+driver.get("http://practice.automationtesting.in/")
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+driver.find_element_by_css_selector("a[data-product_id='182']").click()
+time.sleep(3)
+element=driver.find_element_by_css_selector("span[class='cartcontents']").text
+print(element)
+assert element=="1 Item"
+element=driver.find_element_by_css_selector("span[class='amount']").text
+print(element)
+assert element=="₹180.00"
+driver.find_element_by_css_selector("a[title='View your shopping cart']").click()
+
+WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "tr[class='cart-subtotal']"), "180.00"))
 
 #работа в корзине
 driver.get("http://practice.automationtesting.in/")
@@ -124,6 +123,31 @@ time.sleep(1)
 driver.find_element_by_css_selector("input[name='apply_coupon']").click()
 time.sleep(2)
 text=driver.find_element_by_tag_name("body").text
-# print(text)
 assert "Please enter a coupon code." in text
 
+# покупка товара
+driver.get("http://practice.automationtesting.in/")
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/shop/']").click()
+driver.execute_script("window.scrollBy(0,300);")
+driver.find_element_by_css_selector("a[data-product_id='182']").click()
+time.sleep(3)
+driver.find_element_by_css_selector("a[title='View your shopping cart']").click()
+driver.find_element_by_css_selector("a[href='http://practice.automationtesting.in/checkout/']").click()
+
+driver.find_element_by_id("billing_first_name").send_keys("Ivan")
+driver.find_element_by_id("billing_last_name").send_keys("Ivanov")
+driver.find_element_by_id("billing_email").send_keys("Ivan@ivan.ru")
+driver.find_element_by_id("select2-chosen-1").click()
+driver.find_element_by_id("s2id_autogen1_search").send_keys("qatar")
+driver.find_element_by_id("select2-result-label-260").click()
+driver.find_element_by_css_selector("input[name='billing_address_1']").send_keys("Proletarskaya street")
+driver.find_element_by_css_selector("input[name='billing_city']").send_keys("capital of Qatar")
+driver.find_element_by_css_selector("input[name='billing_state']").send_keys("Center")
+driver.find_element_by_id("billing_phone").send_keys("123456")
+driver.find_element_by_css_selector("input[name='billing_postcode']").send_keys("423600")
+driver.execute_script("window.scrollBy(0,600);")
+time.sleep(2)
+driver.find_element_by_id("payment_method_cheque").click()
+driver.find_element_by_id("place_order").click()
+some_element=WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div[class='page-content entry-content']"),"Thank you. Your order has been received."))
+some_element=WebDriverWait(driver,10 ).until(EC.text_to_be_present_in_element((By.TAG_NAME, "tfoot"),"Check Payments"))
